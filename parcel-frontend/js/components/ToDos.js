@@ -10,5 +10,10 @@ export default function ToDo(todos){
             }).join('')
         }
         </ol>
+
+        <section class="add-todo">
+            <input class="add-todo__todoname" type="text" placeholder="Add a todo!">
+            <button class="add-todo__submit">Submit</button>
+        </section>
     `
 }

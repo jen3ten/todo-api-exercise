@@ -11,6 +11,7 @@ function pageBuild() {
   navHome();
   navValues();
   navToDos();
+  // submitToDo();
 }
 
 function header() {
@@ -41,4 +42,23 @@ function navToDos(){
       document.querySelector('#app').innerHTML = ToDos(todos);
     })
   })
+
+  document.querySelector('#app').addEventListener("click", function(){
+    if(event.target.classList.contains('add-todo__submit')){
+      const todo = event.target.parentElement.querySelector('.add-todo__todoname').value;
+      apiActions.postRequest("https://localhost:44326/api/todos", todo, todos => {
+        document.querySelector('#app').innerHTML = ToDos(todos);
+      })
+    }
+  })
 }
+
+// function submitToDo(){
+//   const submitButton = document.querySelector(".add-todo__submit");
+//   submitButton.addEventListener("click", function(){
+//       const todo = event.target.parentElement.querySelector('.add-todo__todoname').value;
+//       apiActions.postRequest("https://localhost:44326/api/todos", todo, todos => {
+//         document.querySelector('#app').innerHTML = ToDos(todos);
+//       })
+//   })
+// }
