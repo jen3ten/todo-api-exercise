@@ -5,11 +5,11 @@ export default function Value(values) {
               .map(value => {
                 return `
                     <li>
-                        <h3>${value}</h3}
+                        <h3>${value}</h3>
                     </li>
-                `;
+                `
               })
               .join("")}
         </ul>
-    `;
+    `
 }

@@ -2,6 +2,7 @@ import Header from "./components/header";
 import Home from "./components/home";
 import apiActions from "./api/api-actions";
 import Value from "./components/Value";
+import ToDos from "./components/ToDos";
 
 pageBuild();
 
@@ -9,6 +10,7 @@ function pageBuild() {
   header();
   navHome();
   navValues();
+  navToDos();
 }
 
 function header() {
@@ -30,4 +32,13 @@ function navValues() {
       document.querySelector("#app").innerHTML = Value(values);
     });
   });
+}
+
+function navToDos(){
+  const todosButton = document.querySelector(".nav__todos");
+  todosButton.addEventListener("click", function(){
+    apiActions.getRequest("https://localhost:44326/api/todos", todos => {
+      document.querySelector('#app').innerHTML = ToDos(todos);
+    })
+  })
 }
