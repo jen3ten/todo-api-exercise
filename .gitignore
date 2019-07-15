@@ -358,3 +358,4 @@ typings/
 
 ## dist folder
 /dist
+/parcel-frontend/dist
