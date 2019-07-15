@@ -48,9 +48,15 @@ function navToDos() {
       const todo = event.target.parentElement.querySelector(
         ".add-todo__todoname"
       ).value;
+
+      const data = {
+        id: 0,
+        item: todo
+      };
+
       apiActions.postRequest(
         "https://localhost:44326/api/todos",
-        todo,
+        data,
         todos => {
           document.querySelector("#app").innerHTML = ToDos(todos);
         }

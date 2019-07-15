@@ -6,6 +6,7 @@ function getRequest(location, callback) {
 }
 
 function postRequest(location, requestBody, callback) {
+  console.log(requestBody);
   fetch(location, {
     method: "POST",
     body: JSON.stringify(requestBody),

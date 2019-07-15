@@ -32,11 +32,12 @@ namespace Todos2019.Controllers
             return db.ToDos.ToList();
         }
 
-        //[HttpPost]
-        //public ActionResult<IEnumerable<string>> Post([FromBody] string todo)
-        //{
-        //    all.Add(todo);
-        //    return all;
-        //}
+        [HttpPost]
+        public ActionResult<IEnumerable<ToDo>> Post([FromBody] ToDo todo)
+        {
+            db.ToDos.Add(todo);
+            db.SaveChanges();
+            return db.ToDos.ToList();
+        }
     }
 }
