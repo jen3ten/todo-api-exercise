@@ -29,7 +29,6 @@ namespace Todos2019.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<ToDo>> Get()
         {
-            //return all;
             return db.ToDos.ToList();
         }
 
