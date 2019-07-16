@@ -12,7 +12,6 @@ function pageBuild() {
   navHome();
   navValues();
   navToDos();
-  // submitToDo();
 }
 
 function header() {

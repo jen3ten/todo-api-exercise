@@ -1,3 +1,5 @@
+import imgTodo from "~/img/img_todo.jpg";
+
 export default function ToDo(todos) {
   return `
         <ol>
@@ -6,7 +8,7 @@ export default function ToDo(todos) {
                 return `
                 <li>
                     <h3>${todo.item}</h3>
-                    <img src="img_todo.jpg">
+                    <img src=${imTodo}>
                 </li>
                 `;
               })
