@@ -6,6 +6,7 @@ export default function ToDo(todos) {
                 return `
                 <li>
                     <h3>${todo.item}</h3>
+                    <img src="img_todo.jpg">
                 </li>
                 `;
               })
