@@ -2,13 +2,13 @@ import imgTodo from "~/img/img_todo.jpg";
 
 export default function ToDo(todos) {
   return `
+        <img src=${imgTodo}>
         <ol>
             ${todos
               .map(todo => {
                 return `
                 <li>
                     <h3>${todo.item}</h3>
-                    <img src=${imTodo}>
                 </li>
                 `;
               })
