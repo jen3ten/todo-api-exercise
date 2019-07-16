@@ -18,10 +18,18 @@ namespace Todos2019.Controllers
             "Do things with kids"
         };
 
+        //private ToDosContext db;
+
+        //public TodosController(ToDosContext db)
+        //{
+        //    this.db = db;
+        //}
+
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
             return all;
+            //return db.ToDos.ToList();
         }
 
         [HttpPost]
@@ -29,6 +37,10 @@ namespace Todos2019.Controllers
         {
             all.Add(todo);
             return all;
+
+            //db.ToDos.Add(todo);
+            //db.SaveChanges();
+            //return db.ToDos.ToList();
         }
     }
 }

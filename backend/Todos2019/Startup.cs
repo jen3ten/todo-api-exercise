@@ -33,6 +33,7 @@ namespace Todos2019
             }));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddScoped<ToDosContext, ToDosContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
