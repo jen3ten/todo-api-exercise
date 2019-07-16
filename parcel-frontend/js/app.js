@@ -35,22 +35,32 @@ function navValues() {
   });
 }
 
-function navToDos(){
+function navToDos() {
   const todosButton = document.querySelector(".nav__todos");
-  todosButton.addEventListener("click", function(){
+  todosButton.addEventListener("click", function() {
     apiActions.getRequest("https://localhost:44326/api/todos", todos => {
-      document.querySelector('#app').innerHTML = ToDos(todos);
-    })
-  })
+      document.querySelector("#app").innerHTML = ToDos(todos);
+    });
+  });
 
-  document.querySelector('#app').addEventListener("click", function(){
-    if(event.target.classList.contains('add-todo__submit')){
-      const todo = event.target.parentElement.querySelector('.add-todo__todoname').value;
-      apiActions.postRequest("https://localhost:44326/api/todos", todo, todos => {
-        document.querySelector('#app').innerHTML = ToDos(todos);
-      })
+  document.querySelector("#app").addEventListener("click", function() {
+    if (event.target.classList.contains("add-todo__submit")) {
+      const todo = event.target.parentElement.querySelector(
+        ".add-todo__todoname"
+      ).value;
+      const data = {
+        id: 0,
+        item: todo
+      };
+      apiActions.postRequest(
+        "https://localhost:44326/api/todos",
+        data,
+        todos => {
+          document.querySelector("#app").innerHTML = ToDos(todos);
+        }
+      );
     }
-  })
+  });
 }
 
 // function submitToDo(){
