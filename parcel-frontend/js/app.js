@@ -3,6 +3,7 @@ import Home from "./components/home";
 import apiActions from "./api/api-actions";
 import Value from "./components/Value";
 import ToDos from "./components/ToDos";
+import "../css/style.css";
 
 pageBuild();
 
