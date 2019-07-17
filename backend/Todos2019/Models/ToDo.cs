@@ -9,5 +9,7 @@ namespace Todos2019.Models
     {
         public int Id { get; set; }
         public string Item { get; set; }
+
+        public virtual List<Tag> Tags { get; set; }
     }
 }

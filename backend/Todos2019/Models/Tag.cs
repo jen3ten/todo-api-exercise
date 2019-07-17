@@ -9,5 +9,7 @@ namespace Todos2019.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
+        public int ToDoId { get; set; }
     }
 }

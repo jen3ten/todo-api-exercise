@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Todos2019;
 
 namespace Todos2019.Migrations
 {
     [DbContext(typeof(ToDosContext))]
-    partial class ToDosContextModelSnapshot : ModelSnapshot
+    [Migration("20190717171651_TagModelAdded")]
+    partial class TagModelAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,14 +34,7 @@ namespace Todos2019.Migrations
 
                     b.HasIndex("ToDoId");
 
-                    b.ToTable("Tags");
-
-                    b.HasData(
-                        new { Id = 1, Name = "Difficult", ToDoId = 1 },
-                        new { Id = 2, Name = "8:00 am", ToDoId = 1 },
-                        new { Id = 3, Name = "Eggs", ToDoId = 2 },
-                        new { Id = 4, Name = "Important", ToDoId = 2 }
-                    );
+                    b.ToTable("Tag");
                 });
 
             modelBuilder.Entity("Todos2019.Models.ToDo", b =>

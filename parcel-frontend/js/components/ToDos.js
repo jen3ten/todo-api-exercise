@@ -9,6 +9,11 @@ export default function ToDo(todos) {
                 return `
                 <li>
                     <h3>${todo.item}</h3>
+                    ${todo.tag.map(tagitem => {
+                      return `
+                            <h4>${tagitem.name}</h4>
+                        `;
+                    })}
                 </li>
                 `;
               })

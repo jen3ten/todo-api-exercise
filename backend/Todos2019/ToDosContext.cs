@@ -10,6 +10,7 @@ namespace Todos2019
     public class ToDosContext : DbContext
     {
         public DbSet<ToDo> ToDos { get; set; }
+        public DbSet<Tag> Tags { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -39,6 +40,34 @@ namespace Todos2019
                     Id = 3,
                     Item = "Exercise"
                 }
+            );
+
+            modelBuilder.Entity<Tag>().HasData(
+                new Tag
+                {
+                    Id = 1,
+                    Name = "Difficult",
+                    ToDoId = 1
+                },
+                new Tag
+                {
+                    Id = 2,
+                    Name = "8:00 am",
+                    ToDoId = 1
+                },
+                new Tag
+                {
+                    Id = 3,
+                    Name = "Eggs",
+                    ToDoId = 2
+                },
+                new Tag
+                {
+                    Id = 4,
+                    Name = "Important",
+                    ToDoId = 2
+                }
+
             );
         }
     }

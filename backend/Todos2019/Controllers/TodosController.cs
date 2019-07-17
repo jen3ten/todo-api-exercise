@@ -22,7 +22,7 @@ namespace Todos2019.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<ToDo>> Get()
         {
-            return db.ToDos.ToList();
+            return db.ToDos.ToArray();
         }
 
         [HttpPost]
