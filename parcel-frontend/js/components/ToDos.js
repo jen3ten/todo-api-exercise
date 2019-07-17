@@ -1,6 +1,7 @@
 import imgTodo from "~/img/img_todo.jpg";
 
 export default function ToDo(todos) {
+  console.log(todos);
   return `
         <img src=${imgTodo}>
         <ol>
@@ -9,11 +10,13 @@ export default function ToDo(todos) {
                 return `
                 <li>
                     <h3>${todo.item}</h3>
-                    ${todo.tag.map(tagitem => {
-                      return `
+                    ${todo.tags
+                      .map(tagitem => {
+                        return `
                             <h4>${tagitem.name}</h4>
                         `;
-                    })}
+                      })
+                      .join("")}
                 </li>
                 `;
               })

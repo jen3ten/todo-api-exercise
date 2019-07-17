@@ -50,12 +50,14 @@ function navToDos() {
       ).value;
       const data = {
         id: 0,
-        item: todo
+        item: todo,
+        tags: []
       };
       apiActions.postRequest(
         "https://localhost:44326/api/todos",
         data,
         todos => {
+          console.log(data);
           document.querySelector("#app").innerHTML = ToDos(todos);
         }
       );
