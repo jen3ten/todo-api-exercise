@@ -9,7 +9,10 @@ export default function ToDo(todos) {
               .map(todo => {
                 return `
                 <li>
-                    <h3>${todo.item}</h3>
+                    <div class="delete-todo">
+                        <h3>${todo.item}</h3>
+                        <button class="delete-todo__submit">delete</button>
+                    </div>
                     ${todo.tags
                       .map(tagitem => {
                         return `
