@@ -63,6 +63,23 @@ function navToDos() {
       );
     }
   });
+
+  document.querySelector("#app").addEventListener("click", function() {
+    if (event.target.classList.contains("delete-todoId__submit")) {
+      console.log("event triggered");
+      const todo = event.target.parentElement.querySelector(".delete-todo__id")
+        .value;
+      console.log(todo);
+      apiActions.deleteRequest(
+        "https://localhost:44326/api/todos",
+        todo,
+        toDos => {
+          console.log(toDos);
+          document.querySelector("#app").innerHTML = ToDos(toDos);
+        }
+      );
+    }
+  });
 }
 
 // function submitToDo(){
