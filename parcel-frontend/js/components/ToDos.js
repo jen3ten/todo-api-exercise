@@ -11,7 +11,9 @@ export default function ToDo(todos) {
                 <li>
                     <div class="delete-todo">
                         <h3>${todo.item}</h3>
-                        <input class="delete-todo__id" type="hidden" value="${todo}">
+                        <input class="delete-todo__id" type="hidden" value="${
+                          todo.id
+                        }">
                         <button class="delete-todo__submit">delete</button>
                     </div>
                     ${todo.tags

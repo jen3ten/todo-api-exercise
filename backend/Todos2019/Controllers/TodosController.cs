@@ -32,5 +32,13 @@ namespace Todos2019.Controllers
             db.SaveChanges();
             return db.ToDos.ToList();
         }
+
+        [HttpDelete]
+        public ActionResult<IEnumerable<ToDo>> Delete([FromBody] ToDo todo)
+        {
+            db.ToDos.Remove(todo);
+            db.SaveChanges();
+            return db.ToDos.ToList();
+        }
     }
 }
